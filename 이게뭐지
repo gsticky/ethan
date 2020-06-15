@@ -1,0 +1,22 @@
+import os
+
+
+def convert(path):
+    new_data = ''
+
+    with open(path, 'r') as f:
+        for line in f.readlines():
+            new_data += line.replace(text_before, text_after)
+
+    with open(path + '_', 'w+') as f:
+        f.write(new_data)
+
+
+text_before = 'He'
+text_after = 'She'
+root_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs')
+file_list = os.listdir(root_dir)
+
+for file_name in file_list:
+    file_path = os.path.join(root_dir, file_name)
+    convert(path=file_path)
